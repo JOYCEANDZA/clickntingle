@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema ({
+
+const userSchema = new Schema({
     facebook: {
+        type: String
+    },
+    google: {
         type: String
     },
     firstname: {
@@ -15,7 +19,8 @@ const userSchema = new Schema ({
         type: String
     },
     image: {
-        type: String
+        type: String,
+        default:'/img/user.jpg'
     },
     email: {
         type: String
@@ -33,8 +38,11 @@ const userSchema = new Schema ({
     wallet: {
         type: Number,
         default: 0
+    },
+    password: {
+        type: String
     }
+
 });
 
 module.exports = mongoose.model('User',userSchema);
-//login with fb 0.03 video 22
